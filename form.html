@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900");
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+  font-family: "Raleway", sans-serif;}
+
+        input[type=text],        input[type=tel],
+        input[type=email],
+
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+        button[type=submit]{
+  background-color: #f27a1b;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #ffffff    ;
+                    padding: 20px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        form{
+            background-color: rgba(87, 6, 124, 0.089); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, rgba(116, 33, 172, 0.075), rgba(209, 112, 0, 0.192));    padding: 15px;
+    border-radius: 10px;
+        }
+        input[type="text"], input[type="password"], textarea, select { 
+    outline: none;
+}
+
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+
+            .col-25,
+            .col-75,
+            input[type=button] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    </style>
+       <link href="https://kendo.cdn.telerik.com/2021.1.119/styles/kendo.common.min.css" rel="stylesheet" />
+       <link href="https://kendo.cdn.telerik.com/2021.1.119/styles/kendo.default.min.css" rel="stylesheet" />
+   
+   
+</head>
+
+<body>
+<div class="container">
+    <a id="logo" href="index.html">    <img src="assets/images/log.png" alt="Usta Online Logo" />
+    </a>
+
+</div>
+
+
+    <div class="container">
+        <form >
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">İsim</label>
+                </div>
+                <div class="col-75">
+                    <input class="name" required type="text" id="fname" name="firstname" placeholder="İsim">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">Soyisim</label>
+                </div>
+                <div class="col-75">
+                    <input class="lname"required type="text" id="lname" name="lastname" placeholder="Soyisim">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="tel">Telefon Numaranız</label>
+                </div>
+                <div class="col-75">
+                    <input class="phone" type="tel" id="phone" name="phone" placeholder="Telefon Numaranız" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Email Adresiniz</label>
+                </div>
+                <div class="col-75">
+                    <input  class="email" type="email" id="email" name="email" placeholder="Email Adresiniz">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="city">Şehir</label>
+                </div>
+                <div class="col-75">
+                    <input id="citiesDropdown" style="width: 100%;" />
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="semt">İlçe</label>
+                </div>
+                <div class="col-75">
+                    <input id="ilcelerDropdown" style="width: 100%;" />
+
+                  
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="semt">Semtler</label>
+                </div>
+                <div class="col-75">
+                    <input id="semtlerDropdown" style="width: 100%;" />
+
+                  
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="adres">Adres</label>
+                </div>
+                <div class="col-75">
+                    <textarea  class="adres" id="adres" name="adres"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="not">Eklemek İstediğiniz Notlar</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="not" name="not"  style="height:130px"></textarea>
+                </div>
+            </div>
+            <!---
+             <div class="row">
+                <div class="col-25">
+                    <label for="foto">Eklemek İstediğiniz Fotoğraflar</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="foto" name="foto" style="height:130px"></textarea>
+                </div>
+            </div>
+            -->
+           
+    </div>
+  
+  
+    <div class="row">
+        <button type="submit" value="Submit">Gönder</button>
+    </div>
+    </form>
+    </div>
+
+</body>
+<script>
+
+    /*
+  
+
+EYÜP
+Kemerburgaz, Otakçılar, Rami
+
+FATİH
+Ahırkapı, Altımermer, Ayakapı, Bahçekapı, Büyüklanga, Cağaloğlu, Draman, Edirnekapı, Eminönü, Eğrikapı, Fener, Fındıkzade, Gedikpaşa, Haseki, Horhor, Kadırga, Kıztaşı, Kumkapı, Küçüklanga, Küçükmustafapaşa, Küçükpazar, Laleli, Mahmutpaşa, Narlıkapı, Nuruosmaniye, Pazartekke, Samatya, Sarayburnu, Saraçhane, Sirkeci, Sulukule, Taşkasap, Unkapanı, Vefa, Vezneciler, Yenikapı, Yusufpaşa, Çapa, Çarşamba, Çarşıkapı, Çatladıkapı, Çemberlitaş, Çukurbostan, İmrahor, Şehzadebaşı
+
+GAZİOSMANPAŞA
+Beşyüzevler, Küçükköy, Taşlıtarla
+
+GÜNGÖREN
+Merter
+
+KADIKÖY
+Ayrılıkçeşme, Bahariye, Çatalçeşme, Çemenzar, Çiftehavuzlar, Haydarpaşa, İbrahimağa, Kalamış, Kızıltoprak, Kuyubaşı, Moda, Selamiçeşme, Söğütlüçeşme, Şenesenevler, Yeldeğirmeni, Ziverbey
+
+KARTAL
+Yakacık
+
+KÜÇÜKÇEKMECE
+İkitelli, Sefaköy
+
+MALTEPE
+Süreyyapaşa
+
+SARIYER
+Boyacıköy, Hacıosman, Kefeliköy
+
+TUZLA
+Akfırat
+
+ZEYTİNBURNU
+Balıklı, Belgradkapı, Cevizlibağ, Dikilitaş
+
+ÜMRANİYE
+Dudullu
+
+ÜSKÜDAR
+Bağlarbaşı, Doğancılar, Fıstıkağacı, Harem, Karacaahmet, Nakkaştepe, Pazarbaşı, Paşalimanı, Selamsız, Toptaşı, Vaniköy, Çamlıca
+
+ŞİŞLİ
+Bomonti, Elmadağ, Gülbağ, Kurtuluş, Nişantaşı, Okmeydanı, Osmanbey, Pangaltı, Sıracevizler, Topağacı, Zincirlikuyu, Çiftecevizler
+    */
+</script>
+<script src="assets/js/jquery-2.1.0.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+
+
+<!-- Global Init -->
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://kendo.cdn.telerik.com/2021.1.119/js/kendo.all.min.js"></script>
+
+<script src="assets/js/script.js"></script>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+
+<script src="form.js"></script>
+
+</html>
+
